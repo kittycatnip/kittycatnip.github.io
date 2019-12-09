@@ -1,12 +1,16 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-  </head>
-  <body>
-    <h1>Hello Jenny!</h1>
-    <img src="./assets/elba.JPG">
-    <button>Buy</button>
-  </body>
-</html>
+---
+layout: default
+title: Kitty Catnip
+---
+
+<ul>
+    {% for product in site.products %}
+      <li>
+        <h2>{{ product.name }}</h2>
+        <img src="{{ product.image }}" width="20%" height="20%">
+        <h3>{{ product.price }}</h3>
+        <p>{{ product.content | markdownify }}</p>
+        <button>Buy</button>
+      </li>
+    {% endfor %}
+  </ul>
